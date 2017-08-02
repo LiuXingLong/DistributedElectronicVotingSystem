@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.votetable {background:url("/imagebgs/votetable.gif") no-repeat scroll 0 0 transparent}
+.voteinfo td span{float:left ;margin-left:20px;background:url("/imagebgs/voteinfospan.gif") no-repeat scroll 0 0 transparent}
+.footer {
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    margin-top: 70px;
+    padding: 20px 0 5px 0;
+    text-align: center;
+    background:url("../img/footer.gif") no-repeat scroll 0 0 #F5F5F5;
+}

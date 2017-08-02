@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的项目</title>
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bootstrap-editable.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <style type="text/css">
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle!important;
+        }
+    </style>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <!--标题栏开始-->
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>管理我的项目<small class="m-l-sm">Now,进行项目编辑！</small></h5>
+        </div>
+    </div>
+    <!--标题栏结束-->
+
+    <!-- Panel Other -->
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Events -->
+                    <div class="example-wrap">
+                        <h4 class="example-title">项目管理</h4>
+                        <div class="example">
+                            <div class="alert alert-success" id="examplebtTableEventsResult" role="alert">查看简单项目配置，并可以对项目配置进行更改！</div>
+                            <table data-toggle="table" data-url="<{:U('Vote/getAll')}>" id="table">
+                                <thead>
+	                                <tr>
+	                                    <th data-field="proid">项目编号</th>
+	                                    <th data-field="votename">项目名称</th>
+	                                    <th data-field="voteway" data-formatter="votewayFormatter">投票形式</th>
+	                                    <th data-field="votenums">设置票数</th>	                                    
+	                                    <th data-field="templetid">使用模板</th>
+	                                    <th data-field="startime">开始时间</th>
+	                                    <th data-field="endtime">结束时间</th>
+	                                    <th data-field="voterule">投票规则</th>
+	                                    <th data-field="picdes">封面描述</th>
+	                                    <th data-field="operation" data-formatter="actionFormatter" data-events="actionEvents">操作</th>
+	                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- End Example Events -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Panel Other -->
+</div>
+
+<!-- 二维码查看项目 -->
+<div class="modal fade" id="qrcode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+       <div class="modal-content col-sm-8">
+           <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+               <h4 class="modal-title">项目二维码</h4>
+           </div>
+           <div class="modal-body">
+				<img src="" class="img-rounded"/>								
+           </div>
+       </div>
+   </div>
+</div>
+<!-- 二维码查看项目 -->
+
+<!-- 全局js -->
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+
+<!-- 自定义js -->
+<script src="__PUBLIC__/js/content.js"></script>
+
+<!-- Bootstrap table -->
+<script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="__PUBLIC__/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<script src="__PUBLIC__/js/bootstrap-editable.js"></script>
+<script src="__PUBLIC__/js/plugins/toastr/toastr.min.js"></script>
+<script>
+    $(function(){
+        toastr.options.positionClass = 'toast-top-center';
+        //隐藏 votenums 行
+        $('#table').bootstrapTable('hideColumn', 'proid');
+        $('#table').bootstrapTable('hideColumn', 'votenums');
+    });
+    var API_URL = "<{:U('Vote/getAll')}>";
+    var $table = $('#table').bootstrapTable({
+    							url: API_URL,
+    							pagination: true,
+    							//pageSize: 10,  //分页每页条数    默认10条
+    							//sidePagination: "client", // 分页方式client 或  server    默认client
+    							//search: true, //是否显示表格搜索
+    							//strictSearch: true,  // 字符串搜索
+    							//sortable: true, //是否启用排序 
+    							//sortOrder: "ID asc", //排序方式
+    						});
+    function votewayFormatter(value, row, index){
+    	return value ? '每日限投'+ row.votenums +'票(可重复投给一个人)' : '每日限投'+ row.votenums +'票(不可重复投给一个人)';
+    }
+    function actionFormatter(value, row, index) {
+        return '<a href="#" style="margin:2px 0;" class="see" >查看</a><br>' + '<a href="#" style="margin:2px 0;" class="update" >修改</a><br>' + '<a href="#" style="margin:2px 0;" class="delete">删除</a>';
+    }
+    window.actionEvents = {
+   		'click .see': function(e, value, row) {
+   			$('.img-rounded').attr('src',row.qrcode);
+   			$('#qrcode').modal('show');
+        },
+        'click .update': function(e, value, row) {
+            window.location.href="<{:U('Vote/updateVote')}>?proid="+row.proid;
+        },
+        'click .delete' : function(e, value, row) {
+            if (confirm('确定删除该记录吗?')) {
+                $.ajax({
+                    url:"<{:U('Vote/deleteVote')}>",
+                    type: 'POST',
+                    data:{"vote_id":row.proid},
+                    success: function (data) {
+                        if(data['status']){
+                            $table.bootstrapTable('refresh');
+                            toastr.success('恭喜您，删除成功!',1500);
+                        }
+                    }, error: function () {
+                        toastr.error('哎呀呀！出现异常啦，删除失败，请稍后重试',1500);
+                    }
+                })
+            }
+        }
+    }
+</script>
+</body>
+</html>

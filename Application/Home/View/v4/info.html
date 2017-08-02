@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>【<{$User.personame}>】 —<{$User.lables}>-<{$Project.name}></title>
+        <meta name="description" content="<{$Project.name}>">
+        <meta name="”format-detection”" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="email=no" name="format-detection">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+        <link href="__PUBLIC__/v4/bootstrap/bootstrap.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="__PUBLIC__/v4/font-awesome-4.7.0/css/awesome.css">
+        <link href="__PUBLIC__/v4/css/style.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/v4/css/wapstyle.css" rel="stylesheet" media="screen">
+        <link href="__PUBLIC__/v4/css/votestyle.css" rel="stylesheet" media="screen">
+        <link href="http://m130862.mustfollow.ax.mvote.net/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="http://m130862.mustfollow.ax.mvote.net/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        <script src="__PUBLIC__/v4/js/jquery.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/v4/js/wxvote.js"></script>
+        <link href="__PUBLIC__/v4/css/wapstyle_green.css" rel="stylesheet" media="screen">
+        <style>.topbar a{text-decoration:none;}</style>
+    </head>
+    <body class="weixinstyle">
+        <div class="topbar">
+            <a href="<{:U('index')}>">
+                <i class=" icon-angle-left"></i>返回</a>
+        </div>
+        <div class="wapwrap">
+            <div class="container bodycontainer" style="min-height:350px;">
+                <div class="page-header"><{$User.huid}>. 【<{$User.personame}>】—<{$User.lables}></div>
+                <div class="oppageimg" style="margin-bottom:20px;text-align:center;">
+                    <img src="<{$User.perpic}>" alt="<{$User.lables}>">
+                </div>
+                <div class="vopagecontentbody">
+                    <p><{$User.brifintro}></p>
+                </div>
+                <div class="votenuminfo">已获票数：<{$User.daynums}></div>
+                <div class="votebuttons">
+                    <button class="btn btn-info my_wxvotebutton" data-itid="<{$User.huid}>">
+                        <i class="icon-thumbs-up"></i>投Ta一票
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="followalert followalertnew dofollowalert" style="display: none;">
+            <div class="falertbox1" style="text-align:center;top: 156px;padding: 10px 0px 20px;">
+                <h3 class="h3" style="color: #2ecc71;"><strong>身份验证</strong></h3>
+                <p>首次投票需进行身份证后六位验证！</p>
+                <p class="p1">&nbsp;&nbsp;
+                                                                     姓名：<input id="personame"  style="margin:15px 0px 5px;height: 25px;border:0;border-radius: 5px;background-color: #ddd;"><br>
+               	            身份证：<input id="joinflag"  style="margin:5px 0px 10px;height: 25px;border:0;border-radius: 5px;background-color: #ddd;"><br>
+               		<button type="button" id="verify_button" style="width: 68px;height: 30px; border:0;border-radius: 5px;color:#fff;background-color: #2ecc71;">提交</button>
+                </p>
+                <p class="p1">
+                    <a id="cancelfollowalert" class="btn-link"></a>
+                </p>
+            </div>
+        </div>
+        <div class="wapalert" style="display:none;">
+            <p class="msg_title"></p>
+            <p class="msg_content" style="font-size: 18px;line-height: 18px;"></p>
+        </div>
+        <script>
+	        var vote_url = "<{:U('clickVote')}>";
+	    	var verify_url = "<{:U('Verify')}>";
+    	</script>
+    </body>
+</html>

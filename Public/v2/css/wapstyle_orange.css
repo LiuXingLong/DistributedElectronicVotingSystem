@@ -1,0 +1,102 @@
+@CHARSET "UTF8";
+
+
+.weixinstyle{
+	
+	
+}
+.weixinstyle .navbar-poll .navbar-inner{
+	background-color: #FF9900;
+    background-image: linear-gradient(to bottom, #FF9900, #FF9900);
+    background-repeat: repeat-x;
+    border-color: #FF9900;
+    
+}
+.weixinstyle .wxvoteinfo {
+	 background-color: #FF9900;
+}
+.weixinstyle .wxvoteinfo ul li{
+
+	color: #fff;
+	
+}
+.weixinstyle  .left-border{
+	
+	border-left:1px solid #fff;
+	
+}
+.weixinstyle .votetitle h4{
+	
+}
+.weixinstyle .blockcell{
+	border-bottom: 1px solid #ececec;
+}
+
+.weixinstyle  .rightarrow .arrow{
+	color: #ccc;
+}
+
+.weixinstyle .voteoplist .wxop{
+	background-color: #ececec;
+   
+}
+
+
+.weixinstyle  .topbar {
+	background-color: #FF9900;
+}
+.weixinstyle  .topbar a{
+	color: #fff;
+
+}
+
+.weixinstyle  .votenuminfo{
+	color: red;
+   
+}
+
+.weixinstyle .btn {
+  background: #34495e;
+  color: white;
+}
+.weixinstyle  .btn:hover, .weixinstyle  .btn:focus {
+    background-color: #4e6d8d;
+    color: white;
+}
+.weixinstyle   .btn:active,.weixinstyle  .btn.active {
+    background-color: #FF9900;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.weixinstyle  .btn.btn-warning{
+	background-color: #FF9900;
+}
+.weixinstyle  .btn.btn-warning {
+    background-color: #FF9900; 
+}
+.weixinstyle .btn.btn-warning:hover, .weixinstyle .btn.btn-warning:focus {
+      background-color: #f4d03f; 
+}
+.weixinstyle   .btn.btn-warning:active,.weixinstyle .btn.btn-warning.active {
+      background-color: #cea70c; 
+}
+.weixinstyle .btn.btn-info {
+    background-color: #FF9900; 
+}
+.weixinstyle .btn.btn-info:hover,.weixinstyle .btn.btn-info:focus {
+      background-color: #f4d03f; 
+}
+.weixinstyle  .btn.btn-info:active,.weixinstyle .btn.btn-info.active {
+      background-color: #cea70c; 
+}
+
+.weixinstyle  .btn.disabled,.weixinstyle  .btn[disabled] {
+    background-color: #ccc;
+    color: white; 
+}
+.weixinstyle .voteoplist .wxop  .wxoptxt a{
+	color:#FF9900;
+}
+
+
+

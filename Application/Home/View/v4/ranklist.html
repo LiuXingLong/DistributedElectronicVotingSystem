@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><{$Project.name}></title>
+        <meta name="description" content="<{$Project.name}>">
+        <meta name="”format-detection”" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta content="email=no" name="format-detection">
+        <meta content="telephone=no" name="format-detection">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+        <link href="__PUBLIC__/v4/bootstrap/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="__PUBLIC__/v4/font-awesome-4.7.0/css/awesome.css">
+        <link href="__PUBLIC__/v4/css/style.css" rel="stylesheet">
+        <link href="__PUBLIC__/v4/css/wapstyle.css" rel="stylesheet">
+        <link href="__PUBLIC__/v4/css/votestyle.css" rel="stylesheet">
+        <link href="http://m130862.mustfollow.ax.mvote.net/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="http://m130862.mustfollow.ax.mvote.net/favicon.ico" type="image/x-icon" rel="shortcut icon">
+        <script src="__PUBLIC__/v4/js/jquery.js"></script>
+        <link href="__PUBLIC__/v4/css/wapstyle_green.css" rel="stylesheet" media="screen">
+        <style>.searchbar{ background-image: url("__PUBLIC__/v4/img/alphabg.png"); bottom: 0; height: 56px; left: 0; margin-top: 20px; padding-left: 2.5%; padding-top: 24px; position: fixed; width: 100%; } .voteorderlist{ } .voteorderlist td.span2{ width:40px; } .voteorderlist td.span3{ width:80px; } .voteorderlist td.span5{ } .topbar a{text-decoration:none;}</style>
+    </head>
+    <body class="weixinstyle">
+        <div class="wapwrap">
+            <div class="topbar">
+                <a href="<{:U('index')}>">
+                    <i class=" icon-angle-left"></i>返回</a>
+            </div>
+            <div class="container bodycontainer">
+                <div class="votetitle">
+                    <h4><{$Project.name}></h4></div>
+                <div class="blockcell">
+                    <i class="icon-time"></i>活动截止时间：<{$Project.endtime}></div>
+                <div class="blockcell">
+                    <i class="icon-warning-sign"></i>投票规则：<{$Project.voteway}></div>
+                <h4>最新排名</h4>
+                <table class="table voteorderlist">
+                    <tbody>
+                    	<foreach name="User" item="vo">
+	                        <tr>
+	                            <td class="span2">
+	                                <span class="label">第<{++$key+$FirstRow}>名</span>
+	                            </td>
+	                            <td class="span5">
+	                                <span class="optt">【<{$vo.personame}>】 —<{$vo.lables}></span>
+	                            </td>
+	                            <td class="span3"><{$vo.daynums}>票</td>
+	                        </tr>
+                        </foreach>
+                    </tbody>
+                </table>
+            </div>
+			<style>
+				.page{
+					display: table ;
+					margin:16px auto 40px;
+				}
+				.page a, .page span {
+				    color: #23af5e;
+					float:left;
+				    display:inline-block;
+					width: 8px;
+				    height: 18px;
+				    line-height: 16px;
+				    padding: 4px 12px;
+				    border: 1px solid #2ecc71;
+				    border-right-width: 0px;
+				    text-decoration:none; 
+				}
+				.page .prev, .page .next{
+					width: 42px;
+					border: 1px solid #2ecc71;
+				}
+				.page .prev{
+					border-top-left-radius: 4px;
+			    	border-bottom-left-radius: 4px;
+			    	border-right-width: 0px;
+				}
+				.page .next{
+					border-top-right-radius: 4px;
+			    	border-bottom-right-radius: 4px;
+			    	border-left-width: 0px;
+				}
+				.page .current{
+					color: #fff;
+					background-color:#2ecc71;
+				}
+			</style>
+			<div class="page">
+				<{$Page}>
+			</div>
+            <div class="footer footerwap" style="position: relative;margin-bottom: 0px;padding: 0px;"></div>
+            <script>
+		          myColor = new Array("#4000ff","#00bfff","#00f","#ff0080","#bf00ff","#0ff","#40ff00","#000","#00ff80","#80ff00","#7f00ff","#81a230","#6ca453","#6cce53","#cfce53","#ff7953","#ffe753","#ff9548","#7b9548","#7ba2a1","#7ba23b","#7ba21f","#a68d1f","#f88d1f","#f85b1f","#f85b4f","#f85b78","#f85bdd","#8c64dd","#ff388d");
+		          var label = $('.label');
+		          var len = label.length;
+		          for(var i = 0; i < len; i++){
+		        	  label.eq(i).css("background-color",myColor[i%30]);
+		          }
+		          $('.page .num ,.page .current').last().css("border-right-width", "1px");
+	         </script>
+        </div>
+    </body>
+</html>

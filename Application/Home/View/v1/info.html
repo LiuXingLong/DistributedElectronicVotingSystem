@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/v1/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/v1/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/v1/css/combind_mobile.min.css">
+        <script type="text/javascript">
+	        var vote_url = "<{:U('clickVote')}>";
+	    	var verify_url = "<{:U('Verify')}>";
+            var endDatetimeString = "<{$Project.endtime}>".replace(/-/g,"/");
+            var isCountDownEndDatetime = true;
+        </script>
+        <script src="__PUBLIC__/v1/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="__PUBLIC__/v1/js/jquery.countdown.min.js" type="text/javascript"></script>        
+        <script src="__PUBLIC__/v1/js/Home.js" type="text/javascript"></script>
+        <title><{$Project.name}></title>
+    </head>
+    <body>
+		<nav id="content_ucTopNav_navTopNav" class="navbar navbar-inverse navbar-static-top TopNavbar" role="navigation">
+		    <div class="container">
+		        <ul class="nav navbar-nav">
+		            <li>
+		                <a href="javascript:window.history.go(-1);">
+		                    <i class="fa fa-arrow-left"></i>返回
+		                </a>
+		            </li>
+		        </ul>
+		    </div>
+		</nav>
+        <div class="CustomInfoTop">
+            <img src="__PUBLIC__/v1/img/theme.jpg" width="100%" alt="">
+        </div>   
+        <div class="container ContentWrapper">
+            <h2 class="text-primary">
+                <i><{$User.huid}>.</i>【<{$User.personame}>】
+            </h2><hr>
+            <div id="content_pnlSummaryStat" class="SummaryStat">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr class="info">
+                            <th id="content_thRank" class="text-center">排名</th>
+                            <th id="content_thStat" class="text-center">票数</th></tr>
+                        <tr>
+                            <td id="content_tdRank" class="text-center">
+                                <span id="content_lbRank"><{$User.rank}></span>
+                            </td>
+                            <td id="content_tdStat" class="text-center">
+                                <span id="content_lbStat"><{$User.daynums}></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="DescriptionPageContentWrapper">
+                <div class="DescriptionContent spacing">
+                    <p><{$User.lables}></p>
+                    <p><{$User.brifintro}></p>
+                    <p><br></p>
+                    <div id="content_rptTopicList_rptOptions_0_pnlOptionImage_0" class="OptionImageWrapper thumbnail">
+	                     <a id="content_rptTopicList_rptOptions_0_hplDescription_0" class="DescriptionLink">
+	                         <img id="content_rptTopicList_rptOptions_0_imgOptionImage_0" src="<{$User.perpic}>" alt="<{$User.lables}>">
+	                     </a>
+	                 </div>
+                </div>
+                <div id="content_rptTopicList_rptOptions_0_pnlOneKeyVote_0" class="text-center OneKeyVoteWrapper">
+                    <a id="content_rptTopicList_rptOptions_0_hplOneKeyVote_0" class="btn btn-primary btn-block" data-itid="<{$User.huid}>">
+                        <i class="fa fa-check-square-o"></i>投票
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="footer_ucMenu_pnlMenuWrapper" class="MenuWrapper navbar-fixed-bottom">
+            <div id="footer_ucMenu_pnlMenu" class="MenuCount_2">
+                <ul id="footer_ucMenu_ulMenu">
+                    <li id="footer_ucMenu_liHome">
+                        <a id="footer_ucMenu_hplHome" href="<{:U('index')}>">
+                            <i class="fa fa-home"></i>首页
+                        </a>
+                    </li>
+                    <li id="footer_ucMenu_liRank">
+                        <a id="footer_ucMenu_hplRank" href="<{:U('ranKingList')}>">
+                            <i class="fa fa-star"></i>排名
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="voted" class="VoteSuccessMessage" style="left: 0px;width:180px;margin:auto;display: none;right: 0px;">已成功投票！</div>
+        <div id="msg" style="display: none;">
+	        <div class="modal fade bs-example-modal-sm in" tabindex="-1" role="dialog" id="pnlAlertModal" style="display: block;">
+	            <div class="modal-dialog modal-sm" style="top: 129px;text-align:center;">
+	                <div class="modal-content">
+	                    <div class="modal-body" id="pnlAlertModalContent">
+	                        <strong><h4 id="msg_title"></h4></strong>
+                    		<p id="msg_content"></p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="modal-backdrop fade in"></div>
+        </div>
+        <div id="verify" style="display: none;">
+	        <div class="modal fade bs-example-modal-sm in" tabindex="-1" role="dialog" id="pnlAlertModal" style="display: block;">
+	            <div class="modal-dialog modal-sm" style="top: 129px;text-align:center;" >
+	                <div class="modal-content">
+	                	<h3 class="h3"><strong>身份验证</strong></h3>
+	                    <p>首次投票需进行身份证后六位验证！</p>
+	                	<p class="p1">&nbsp;&nbsp;
+	                                                                         姓名：<input id="personame"  style="margin:15px 0px 5px;height: 25px;border:0;border-radius: 5px;background-color: #ddd;"><br>
+	                   	            身份证：<input id="joinflag"  style="margin:5px 0px 10px;height: 25px;border:0;border-radius: 5px;background-color: #ddd;"><br>
+	                   		<button type="button" id="verify_button" style="width: 68px;height: 30px; border:0;border-radius: 5px;color:#fff;background-color: #325d88;">提交</button>
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="modal-backdrop fade in"></div>
+		</div>
+    </body>
+</html>

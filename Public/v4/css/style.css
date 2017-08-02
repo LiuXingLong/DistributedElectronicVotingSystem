@@ -1,0 +1,545 @@
+.hero-unit{position: relative;}
+.hero-unit-imgs{ position: absolute;right: 20px;top:1px;}
+.navbar,.footer,.wrap {min-width: 1200px;width:100%;}
+.wapwrap,.wapnavbar,.footerwap{min-width: 0;width:100%;}
+.clear{clear:both;}
+
+.navbar {color:#fff;}
+.navbar .brand {
+	background: url("/images/stonepolltop.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    height: 40px;
+    padding: 0;
+    text-indent: -1000px;
+    text-shadow: none;
+    width: 160px;
+	margin-left:-33px;
+}
+.wapwrap .navbar .brand {
+	
+	background: url("/images/logo.png") no-repeat scroll 10px center / 160px auto ;
+    color: #FFFFFF;
+    height: 50px;
+    padding: 0;
+    text-indent: -1000px;
+    text-shadow: none;
+    width: 190px;
+    margin-left:-20px;
+	
+}
+a.disabled{color:gray;}
+.navbar .nav li a{color:#fff;text-shadow:none;}
+.wapwrap .navbar .nav li a{color:#3D88D8;text-shadow:none;}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus{background-color:#3D62D8;box-shadow:none;}
+.navbar .nav .active a, .navbar .nav .active a:hover, .navbar .nav .active a:focus{color:#fff;box-shadow: none;}
+.navbar .container1170{ width: 1170px;}
+.navbar .nav li.dropdown .dropdown-toggle .caret{border-bottom-color:#fff;border-top-color:#fff;}
+
+.wapwrap .navbar .nav li.dropdown .dropdown-toggle .caret{border-bottom-color:#3D88D8;border-top-color:#3D88D8;}
+.navbar .dropdown-menu > li > a {color:#666666}
+
+.navbar .dropdown-menu > li > a:hover,
+.navbar .dropdown-menu > li > a:focus,
+.navbar .dropdown-submenu:hover > a,
+.navbar .dropdown-submenu:focus > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #3D88D8;
+  background-image: -moz-linear-gradient(top, #3D88D8, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3D88D8), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #3D88D8, #0077b3);
+  background-image: -o-linear-gradient(top, #3D88D8, #0077b3);
+  background-image: linear-gradient(to bottom, #3D88D8, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3D88D8', endColorstr='#ff0077b3', GradientType=0);
+}
+
+.hero-unit {background-color:#3D88D8;}
+.hero-unit h1{}
+.hero-unit h1 img{width: 400px;}
+.hero-unit p{color:#fff;font-size:12px;}
+
+.navbar-poll .navbar-inner {
+  background-color: #3D88D8;
+  background-image: -moz-linear-gradient(top, #3D88D8, #3D88D8);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3D88D8), to(#3D88D8));
+  background-image: -webkit-linear-gradient(top, #3D88D8, #3D88D8);
+  background-image: -o-linear-gradient(top, #3D88D8, #3D88D8);
+  background-image: linear-gradient(to bottom, #3D88D8, #3D88D8);
+  background-repeat: repeat-x;
+  border-color: #3D88D8;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3D88D8', endColorstr='#ff3D88D8', GradientType=0);
+}
+
+
+.optext
+{
+	width:100%;
+	margin-bottom: 2px;
+	float:left;line-height:30px;
+	margin-top:3px;
+}
+.opradio{ float:left;margin-top:7px;margin-right:10px;}
+.optextinfo{
+	line-height: 25px;
+    margin-top: 5px;
+	font-size: 18px;
+    
+}
+.opoutbar{float:left;width:85%;background-color:#F7F7F7;margin-bottom:20px;margin-top:0px;position: relative;}
+.opoutbar .opshownum{
+	background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 17px;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 0 5px;
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    color:#666;
+}
+.wapwrap .opoutbar{width:70%;}
+.opbar{float:left;height:20px;}
+.oppi{float:left;height:20px;line-height:20px;margin-left:10px;}
+.voteinfo{margin-bottom:20px;}
+.voteinfo td{color:#666;font-size:12px;border:0px!important;}
+.voteinfo td span{float:left ;margin-left:20px;}
+
+.footer {
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    margin-top: 70px;
+    padding: 20px 0 5px 0;
+    text-align: center;
+}
+.footer a {color:#666;}
+.footer p.domain {color:#3D88D8}
+.footer p.domain a{color:#44b549}
+#captcha{border:1px solid #CFCFCF;}
+.bodycontainer{min-height:500px;width:1100px;}
+.wapwrap .bodycontainer{width:95%;}
+.wapwrap  .form-horizontal .control-label{width:50px;}
+.wapwrap  .form-horizontal .controls{margin-left:60px;}
+.wapwrap .navbar-inner{border-radius:0px;}
+.iframebodycontainer{min-height:500px;width:95%;min-width:500px;}
+.wapwrapcontainer{width:100%;padding:0 10px;}
+.help-inline{color:#999;}
+
+.footer-links {
+    margin: 10px 0;
+}
+.footer-links li {
+    display: inline;
+    padding: 0 2px;
+}
+
+/**/
+body{*font-family:"微软雅黑";padding:0;margin:0;}
+.nav li{*font-family:"微軟正黑體",Arial}
+.voteoptions .voteoptions{*height:20px;*line-height:20px;*padding:0;}
+.icon-th,.icon-remove,.icon-refresh{
+	*background-color:#fff;
+	float: left;
+    margin-left: 2px;
+    margin-top: 3px;
+}
+.icon-th{*background:url("/images/ico-panl.png") no-repeat scroll center center transparent}
+.icon-remove{*background:url("/images/ico-remove.png") no-repeat scroll center center transparent}
+.out-icon-refresh{*background:url("/images/ico-ref.png") no-repeat scroll center center transparent;}
+li.warning{background-color:#FCF8E3}
+li.error{color:#B94A48;border-color:#EED3D7;background-color: #F2DEDE;padding:5px 20px;}
+li.error input{color:#B94A48}
+span.mustfill{color:#F2DEDE}
+.codeTimer{ height: 110px;margin-left:0px;}
+.codeTimer p{}
+.codeTimer span{
+	color: #CCCCCC;
+    font-size: 40px;
+    margin-left:5px;
+    float:left;
+    height:50px;
+    line-height:50px;
+}
+.form-horizontal .ml10{margin-left:10px;}
+.votecontent{word-wrap: break-word;line-height:1.6;}
+.wapwrap .buttons{
+	width:230px;
+	margin:0px auto;
+	
+}
+.wapwrap .buttons .btn{
+	width:200px;
+	margin-top:20px;
+}
+
+.addoppic{
+	border-radius: 3px !important;
+   
+    margin-left: 3px;
+}
+.addoppic i{
+	
+}
+.addoppic a{
+	 cursor: pointer;
+}
+.deloppic{
+	
+}
+.icon-remove{
+	cursor: pointer;
+}
+.addoppicdone{
+	margin-left: 2px;
+}
+.addoppicdone img{
+	width:18px;
+	height:18px;
+	
+}
+.opimage,.opvideo{position: relative;margin-top:20px;}
+.opimage img{
+	
+    
+}
+.oppicmodify{
+	display:none;
+}
+.imgzoomicon{
+	
+    color: #666;
+   
+    font-size: 26px;
+    padding: 5px 8px;
+    position: absolute;
+}
+.imgnumicon,.videonumicon{
+	
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    color: #666666;
+    font-size: 20px;
+    padding: 2px 8px;
+    position: absolute;
+}
+.imgplayicon{
+	 position: absolute;
+	 width:50px;
+	 height:50px;
+	 color:#ccc;
+	 cursor:pointer;
+	 background:rgba(0, 0, 0, 0.3);
+	 border-radius: 34px;
+	 font-size: 35px;
+	 height: 49px;
+	 padding-left: 22px;
+	 padding-top: 16px;
+	 width: 42px;
+}
+.imgplayiconwap{
+	 position: absolute;
+	 width:50px;
+	 height:50px;
+	 color:#ccc;
+	 cursor:pointer;
+	 background:rgba(0, 0, 0, 0.3);
+	 border-radius: 34px;
+	 font-size: 35px;
+	 height: 49px;
+	 margin-left:-25px;
+	 margin-top:-25px;
+	 width: 42px;
+}
+.videonumicon{
+	
+	background-color: #000;
+	color: #fff;
+}
+.imgzoomicon i{
+	 cursor: pointer;
+}
+
+.votetablediv{}
+.votetablediv .optionbox{
+	float: left;
+    height: 245px;
+    margin-right: 40px;
+    width: 200px;
+}
+.votetablediv .optionbox .radiolabel{}
+.votetablediv .optionbox .opimagemini{
+	height: 151px;
+	width:200px;
+    overflow: hidden;
+    padding: 1px;
+    margin-top: 20px;
+    position: relative;
+}
+.votetablediv .optionbox .opimagemini img{
+	border: 1px solid #ccc;
+   
+	
+}
+
+.votetablediv .optionbox .optext{}
+.votetablediv .optionbox .opradio{}
+.votetablediv .optionbox .optextinfo{
+	font-size: 14px;
+    height: 27px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 162px;
+}
+.votetablediv .optionbox .opoutbar{
+	width: 70%;
+}
+.votesubmitbutton{
+	
+	font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    width: 200px;
+}
+.topicopvotebar{
+	height:32px;
+	width:200px;
+}
+.topicopvotebar .btn{float:left;}
+.topicopvotebar span.votenumspan{
+	width: 106px;
+	text-align:center;
+}
+.topicopvotebar .vopqrcode{
+	font-size:31px;
+	
+	text-decoration:none;
+	color:#ccc;
+	float:right;
+}
+.topicopvotebar a:hover{
+	color:#0088cc;
+}
+.wrap .headercontainer{
+	margin-bottom:30px;
+	min-height: 100px;
+}
+.wrap .footercontainer{
+	margin-bottom:30px;
+	min-height: 100px;
+}
+.wrap .headercontainer img{
+	width:100%;
+}
+.nav-tabs li.active i{
+	color:orange;
+}
+.successcases{
+	text-align:center;
+	
+}
+.successcases img{
+	
+	
+}
+.successcases .caseimgbox{
+	width:140px;
+	height:140px;
+}
+.successcases .imgthumb{
+	height: 75px;
+    padding-top: 40px;
+    width: 140px;
+}
+
+.successcases  .imgvrcode{
+	display:none;
+	width:140px;
+	height:140px;
+}
+.alert-gray{
+	background-color: #f5f5f5;
+    border-color: #ccc;
+    color:#000;
+    
+}
+.form-disabled{
+	color:#ccc;
+}
+.wxatable{}
+.wxatable .lefttd{
+	color:#8d8d8d;
+}
+
+.form-horizontal .wxmpinfogroup label{width:140px;color:#8d8d8d}
+.form-horizontal .wxmpinfogroup .controls{margin-left:160px;}
+.form-horizontal .wxmpinfogroup input{}
+
+.iphonebox{
+	backgrou/nd-color: #ccc;
+    height: 721px;
+    margin: 10px auto 0;
+    width: 630px;
+}
+.iphonebox .iphone{
+	background: url("http://r.c.mvote.net/images/iphone6_bg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 721px;
+    width: 345px;
+    float: left;
+    position: relative;
+}
+.iphonebox .iphone .iframe{
+	left: 21px;
+    position: absolute;
+    top: 85px;
+    height: 551px;
+    width: 310px;
+    overflow: hidden;
+}
+.iphonebox .iphone iframe{
+	height: 551px;
+    width: 310px;
+}
+.iphonebox .qrcodeinfo{
+	 float: left;
+	 width:248px;
+	 margin-left:20px;
+	 margin-top:100px;
+	 background-color:#3498db;
+	 border-radius: 5px;
+	 
+	 
+}
+.iphonebox .qrcodeinfo .qrcodeimg{
+	text-align: center;
+	margin-top: 22px;
+    width: 100%;
+}
+.iphonebox .qrcodeinfo .qrcodeimg img{
+	width: 200px;
+	border-radius: 5px;
+	
+}
+.iphonebox .qrcodeinfo .info{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #fff;
+}
+.iphonebox .qrcodeinfo .info p{
+	line-height: 25px;
+    margin: 0 23px;
+}
+.iphonebox .alertinfo {
+	float:left;
+	width: 248px;
+	 margin-left: 20px;
+}
+.iphonebox .alertinfo  h3{
+	font-size: 15px;
+    line-height: 25px;
+    margin: 10px 0 0;
+    text-align: center;
+}
+.iphoneboxwhitebody{
+	background: url("http://r.c.mvote.net/images/iphoneboxbg/iphoneboxbg.jpg") repeat scroll center center #ccc;
+	color:#fff;
+}
+.iphoneboxwhite {
+	width: 750px;
+}
+.iphoneboxwhite .iphone{
+	background-image:none;
+	width: 322px;
+}
+.iphoneboxwhite .iphone .iphoneheader{
+	background: url("http://r.c.mvote.net/images/iphoneboxbg/phone_header.png") no-repeat scroll 0 0 ;
+    height: 42px;
+    width: 322px;
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+.iphoneboxwhite .iphone .iphonetop{
+	position: absolute;
+	background: url("http://r.c.mvote.net/images/iphoneboxbg/phonetop2.gif") no-repeat scroll 0 0;
+	height: 20px;
+    width: 322px;
+    top:43px;
+    left:0px;
+}
+.iphoneboxwhite .iphone .iphonefooter{
+	background: url("http://r.c.mvote.net/images/iphoneboxbg/phone_footer.png") no-repeat scroll 0 0;
+    height: 47px;
+    width: 322px;
+    position: absolute;
+    top: 596px;
+    left:0px;
+}
+.iphoneboxwhite .iphone .iframe{
+	height:533px;
+	left: 0px;
+    top: 63px;
+    width: 322px;
+    background-color:#fff;
+}
+.iphoneboxwhite .iphone .iframe iframe{
+	height: 533px;
+    left: 1px;
+    position: absolute;
+    top: 0;
+    width: 320px;
+}
+.iphoneboxwhite .qrcodeinfo1{
+	border-radius: 5px;
+    float: left;
+    margin-left: 150px;
+    margin-top: 100px;
+    width: 248px;
+}
+.iphoneboxwhite .qrcodeinfo1 .qrcodeimg{
+	margin-top: 22px;
+    text-align: center;
+    width: 100%;
+}
+.iphoneboxwhite .qrcodeinfo1 .qrcodeimg img{
+	border-radius: 5px;
+    width: 200px;
+}
+.iphoneboxwhite .qrcodeinfo1 .info{
+	
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.iphoneboxwhite .qrcodeinfo1 .info p{
+	line-height: 25px;
+    margin: 0 22px;
+    font-size:13px;
+}
+.iphoneboxwhite .alertinfo{
+	margin-left: 150px;
+}
+.iphoneboxwhite .alertinfo  h3{
+	
+	
+}
+.iphoneboxwhitebody .stonepoll ,.iphoneboxwhitebody .copyright{
+	color:#0088cc;
+}
+.iphoneboxwhitebody0{
+	
+	background:url("http://r.c.mvote.net/images/iphoneboxbg/iphoneboxbg_xiuxian.jpg") repeat scroll center center #ccc;
+	color:yellow;
+}
+.iphoneboxwhitebody0 .stonepoll ,.iphoneboxwhitebody0 .copyright{
+	color:#0088cc;
+}
+.iphoneboxwhitebody1{
+	
+	background:url("http://r.c.mvote.net/images/iphoneboxbg/iphoneboxbg_sky.jpg") repeat scroll center center #ccc;
+	color:#fff;
+}
+.iphoneboxwhitebody1 .stonepoll ,.iphoneboxwhitebody1 .copyright{
+	color:yellow;
+}
+

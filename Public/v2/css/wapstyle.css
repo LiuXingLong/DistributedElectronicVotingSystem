@@ -1,0 +1,424 @@
+@CHARSET "UTF8";
+body{overflow-x:"hidden";margin: 0;
+    padding: 0;}
+
+.votesubmitbutton{
+	
+	font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    width: 200px;
+}
+
+.weixinstyle .navbar-poll .navbar-inner{
+	min-height:3px;
+    
+}
+.modal{
+	width:320px;
+}
+
+.weixinstyle{
+	
+	backgro/und-color:#ececec;
+}
+.weixinstyle .navbar-poll .navbar-inner{
+    min-height:5px;
+}
+.weixinstyle .wxvoteinfo {
+	 background-color: #ececec;
+}
+.weixinstyle .wxvoteinfo ul li{
+	
+	width:30%;
+	padding:0px;
+	text-align:center;
+	font-size: 12px;
+	color: #000;
+	margin-bottom: 5px;
+    margin-top: 5px;
+	
+}
+.weixinstyle  .left-border{
+	
+	border-left:1px solid #fff;
+	
+}
+.weixinstyle .votetitle h4{
+	margin: 10px 0 20px;
+	font-size: 16px;
+    font-weight: normal;
+}
+.weixinstyle .blockcell{
+	border-bottom: 1px solid #ececec;
+    hei//ght: 35px;
+    line-height: 35px;
+}
+
+.weixinstyle .blockcell i.icon-time,.weixinstyle .blockcell i.icon-warning-sign,.weixinstyle .blockcell i.icon-bar-chart{
+	
+}
+.weixinstyle  .rightarrow{
+	position: relative;
+}
+.weixinstyle  .rightarrow .arrow{
+	color: #ccc;
+    font-size: 17px;
+    margin-left: 20px;
+    margin-top: 10px;
+    position: absolute;
+}
+.weixinstyle  .rightarrow  .icon-double-angle-up
+{
+	margin-top: 8px;
+}
+.weixinstyle .votedescinfo{
+	margin: 15px;
+	display:none;
+}
+.weixinstyle .voteoplist{
+	
+	margin-top:20px;
+}
+.weixinstyle .voteoplist .plistleft{
+	float: left;
+    width: 48%;
+}
+
+.weixinstyle .voteoplist .plistright{
+	float: right;
+}
+.weixinstyle .voteoplist .wxop{
+	background-color: #ececec;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+    clear: left;
+}
+.weixinstyle .voteoplist .rightwxop{
+	float: right;
+	clear: right;
+}
+.weixinstyle .voteoplist .wxop .wxopimg{
+	text-align: center;
+    width: 100%;
+    
+}
+.weixinstyle .voteoplist .wxop .wxopimg img{
+	width: 100%;
+}
+.weixinstyle .voteoplist .wxop  .wxoptxt{
+	margin-top: 5px;
+	line-height: 25px;
+    margin-left: 10px;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin-right: 10px;
+}
+.weixinstyle .voteoplist .wxop  .wxoptxt a{
+	font-size:12px;
+}
+
+.weixinstyle .voteoplist .p3listleft{
+	float: left;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+.weixinstyle .voteoplist .p3listleft .wxop{
+	clear: none;
+    margin-left: 2.4%;
+    width: 30%;
+}
+.weixinstyle .voteoplist .p3listleft .wxop .wxoptxt{
+	line-height:20px;
+}
+.weixinstyle .voteoplist .p3listleft .wxopvotediv{
+	margin-top:0px;
+	line-height:20px;
+}
+.weixinstyle .voteoplist .p3listleft .wxoptxt .wxvinfo{
+	font-size:10px;
+}
+.weixinstyle .voteoplist .p3listleft .wxop .wxopimg {
+	
+}
+.weixinstyle .voteoplist .p3listleft .wxop .wxopimg img{
+	height: 110px;
+}
+.weixinstyle .wxopvotediv{
+	line-height: 29px;
+	margin:5px 10px 10px 10px;
+}
+.weixinstyle .wxopvotediv .wxvbtn{
+	
+}
+.weixinstyle  .vopagecontentbody{
+	margin-top: 25px;
+}
+.weixinstyle  .topbar {
+	background-color: #3498db;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+}
+.weixinstyle  .topbar a{
+	color: #fff;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.weixinstyle   .page-header{
+	font-size: 16px;
+    font-weight: bold;
+}
+.weixinstyle  .votebuttons{
+	margin: 20px 0;
+    width: 100%;
+}
+.weixinstyle  .votenuminfo{
+	color: red;
+    font-weight: bold;
+}
+.weixinstyle  .votebuttons button{
+	width: 45%;
+}
+.weixinstyle  .votebuttons .wxvotebutton{
+	float: left;
+    
+}
+.weixinstyle  .votebuttons .wxlapiaobutton{
+	float: right;
+   
+}
+.weixinstyle .btn {
+  border: none;
+  background: #34495e;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden; 
+  width:100%;
+}
+.weixinstyle  .btn:hover, .weixinstyle  .btn:focus {
+    background-color: #4e6d8d;
+    color: white;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden; }
+.weixinstyle   .btn:active,.weixinstyle  .btn.active {
+    background-color: #2c3e50;
+    color: rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+
+.weixinstyle  .btn.btn-warning{
+	background-color: #f1c40f;
+}
+.weixinstyle  .btn.btn-warning {
+    background-color: #f1c40f; }
+.weixinstyle .btn.btn-warning:hover, .weixinstyle .btn.btn-warning:focus {
+      background-color: #f4d03f; }
+.weixinstyle   .btn.btn-warning:active,.weixinstyle .btn.btn-warning.active {
+      background-color: #cea70c; 
+}
+.weixinstyle .btn.btn-info {
+    background-color: #3498db; }
+.weixinstyle .btn.btn-info:hover,.weixinstyle .btn.btn-info:focus {
+      background-color: #5dade2; }
+.weixinstyle  .btn.btn-info:active,.weixinstyle .btn.btn-info.active {
+      background-color: #2383c4; }
+
+.weixinstyle  .btn.disabled,.weixinstyle  .btn[disabled] {
+    background-color: #95a5a6;
+    color: white; }
+.weixinstyle .wxopvotediv .wxvinfo{
+	
+	 margin-top: 5px;
+	 text-align: center;
+}
+.followalert{
+	display:none;
+	background:url(../img/alphabg.png) ;
+	opac/ity:0.5;
+	filt/er:alpha(opacity=50);
+    color: #fff;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.followalert .falertbox{
+	float: right;
+    font-size: 16px;
+    line-height: 25px;
+    margin-right: 10px;
+    width: 285px;
+}
+
+.helphimwalert .falertbox{
+	width:190px;
+}
+.followalert .falertbox  p{
+	
+}
+.followalert  .arrowimg {
+	text-align: right;
+	margin-right: 15px;
+}
+.followalert  .arrowimg img{
+	width: 100px;
+}
+.followalert .qrcodeimg {
+	float:right;
+	width:200px;
+}
+.followalertnew .falertbox{
+	
+	background-color: #fff;
+    border-radius: 8px;
+    left: 50%;
+    margin-left: -116px;
+    position: absolute;
+    top: 100px;
+    width: 232px;
+}
+.followalertnew .falertbox1{
+	
+	background-color: #fff;
+    border-radius: 8px;
+    left: 50%;
+    margin-left: -116px;
+    position: absolute;
+    top: 100px;
+    width: 232px;
+}
+
+.followalertnew h3{
+	color: #666;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+.followalertnew h3 img{
+	
+}
+.followalertnew .helpbtns{
+	margin: 10px auto;
+    width: 190px;
+}
+.followalertnew .helpbtns a{
+	margin-bottom: 20px;
+    width: 170px;
+    
+}
+.wapalert {
+	background-color: #000;
+    color: #fff;
+    hei/ght: 50px;
+    left: 50%;
+    margin-left: -150px;
+    position: fixed;
+    text-align: center;
+    top: 35%;
+    width: 300px;
+    border-radius: 14px;
+    opacity:0.8;
+	filter:alpha(opacity=80);
+	display:none;
+}
+.wapalert p{
+	font-size: 20px;
+    line-height: 30px;
+    margin: 20px 15px 23px;
+}
+.loadingpagealert{
+	margin-top: 30px;
+    text-align: center;
+    display:none;
+}
+.loadingpagealert img{
+	
+}
+
+.followalertnew .falertbox1{
+	
+	background-color: #fff;
+    border-radius: 8px;
+    left: 50%;
+    margin-left: -150px;
+    position: absolute;
+    top: 10px;
+    width: 300px;
+}
+.followalertnew .falertbox1 h3{
+	color: orange;
+    font-size: 20px;
+    margin-bottom: 0;
+   margin-top: 0px;
+}
+.followalertnew .falertbox1 h31{
+	 margin-top: 4px;
+}
+.followalertnew .falertbox1 p{
+	color: #666;
+    margin: 0;
+}
+.followalertnew .falertbox1 p1{
+	
+    margin-bottom: 10px;
+}
+.followalertnew .falertbox1 imgp{
+	
+}
+
+.geetestalert{
+	background: url("../img/alphabg.png") repeat scroll 0 0;
+    color: #fff;
+    display: none;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.geetestbox{
+	color: #fff;
+    height: 235px;
+    left: 50%;
+    margin-left: -150px;
+    position: fixed;
+    text-align: center;
+    top: 17%;
+    width: 300px;
+}
+
+.musicbox{
+	
+	height: 50px;
+    position: fixed;
+    right: 5px;
+    top: 20px;
+    width: 50px;
+	display:none;
+	
+}
+.musicbox .mplaying{position:absolute;left:10px;top:10px;width:30px;height:30px;background-size:100% 100%;background-image:url(/images/music_playing.png);-webkit-animation:rotating 1.2s linear infinite;-moz-animation:rotating 1.2s linear infinite;-o-animation:rotating 1.2s linear infinite;animation:rotating 1.2s linear infinite}
+@-webkit-keyframes rotating{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}}@keyframes rotating{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@-moz-keyframes rotating{from{-moz-transform:rotate(0deg)}to{-moz-transform:rotate(360deg)}}
+
+.musicboxstopped{
+	background-image:url(/images/music_playing.png);
+	background-size:30px 30px;
+	background-repeat:no-repeat;
+	background-position:center center
+}
+

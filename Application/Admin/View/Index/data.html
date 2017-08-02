@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - 基本表单</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>投票数据统计<small>  选择您所要查看项目,查看项目投票的数据！</small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                            	<label class="col-sm-2 control-label">显示方式</label>
+                                <div class="col-sm-4">
+                                    <label class="radio-inline i-checks">
+                                        <input type="radio" value="1" name="Radios" checked>折线图
+                                    </label>
+                                    <label class="radio-inline i-checks">
+                                        <input type="radio" value="2" name="Radios">表格
+                                    </label>
+                                </div>
+                                <label class="col-sm-2 control-label">项目名称</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+	                                    <select class="form-control m-b">
+		                                     <foreach name="pro" item="vo">
+		                                     	<option value ="<{$vo.proid}>"><{$vo.votename}></option>
+		                                     </foreach>    
+		                                </select>
+	                                    <span class="input-group-btn"> 
+	                                    	<button id='search' type="button" class="btn btn-primary">搜索</button> 
+	                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- 折线图 -->
+                        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>                       
+                        <!--表格-->
+                        <div id = 'table' style='min-width: 310px; height: 400px; margin: 0 auto;display: none'>
+                        	<div class="ibox-content text-center" style="border-top-width: 0px;">
+		                        <h3 class="m-b-xxs" id='tabletitle'></h3>
+		                    </div>
+                        	<table data-toggle='table' id='tabledata'  data-pagination='true'>
+	                            <thead>
+		                             <tr>
+		                             	 <th data-field="rank">排名</th>
+		                                 <th data-field="name">姓名</th>
+		                                 <th data-field="num">获得票数</th>
+		                                 <th data-field="joinflag">身份标识</th>
+		                                 <th data-field="department">部门</th>
+		                             </tr>
+	                            </thead>
+	                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script> 
+    <!-- highcharts -->
+    <script src="__PUBLIC__/js/plugins/highcharts/highcharts.js"></script>
+	<script src="__PUBLIC__/js/plugins/highcharts/modules/exporting.js"></script>
+    <!-- Bootstrap table -->
+	<script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+	<script src="__PUBLIC__/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- iCheck -->
+    <script src="__PUBLIC__/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+	    Highcharts.setOptions({
+			lang: {
+			   　 printChart:"打印图表",
+				  downloadJPEG: "下载JPEG 图片" , 
+				  downloadPDF: "下载PDF文档"  ,
+				  downloadPNG: "下载PNG 图片"  ,
+				  downloadSVG: "下载SVG 矢量图" , 
+				  exportButtonTitle: "导出图片" 
+			}
+		});
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });           
+            $('input').on('ifChecked', function(event){  
+            	var type = $(this).val(); 
+            	if( type == 1 ){
+            		$('#container').show();
+            		$('#table').hide();
+            	} else {
+            		$('#table').show();
+            		$('#container').hide();
+            	}
+            });
+            $('#search').click(function(){
+            	var proid = $('.form-control option:selected').val();
+            	$.ajax({
+                    url: "<{:U('Index/voteData')}>",
+                    type: 'POST',
+                    data: {'proid':proid},
+                    success: function (data) {
+                    	var proname = $('.form-control option:selected').text();
+                    	$('#tabletitle').text(proname);
+                    	$('#tabledata').bootstrapTable('load',data['table']);
+		                Highcharts.chart('container', {
+		          		  exporting: {
+		          			 enabled:false  // 去掉打印及其导出按钮
+		          		  },
+		          		  credits: {
+		          		     enabled:false  // 去掉highcharts.com
+		          		  },
+		          		  chart: {
+		          		    zoomType: 'xy'
+		          		  },
+		          		  title: {
+		          		    text: proname
+		          		  },
+		          		  subtitle: {
+		          		    text: '用户票数据折线图'
+		          		  },
+		          		  xAxis: [{
+		          		    categories: data['chart']['name'],
+		          		    crosshair: true
+		          		  }],
+		          		  yAxis: [{ // Primary yAxis
+		          			reversed: true, //倒序
+		          			min:1,
+		          			tickInterval:1,
+		          			allowDecimals:false,
+		          		    labels: {
+		          		      format: '{value}',
+		          		      style: {
+		          		        color: Highcharts.getOptions().colors[1]
+		          		      }
+		          		    },
+		          		    title: {
+		          		      text: '名次',
+		          		      style: {
+		          		        color: Highcharts.getOptions().colors[1]
+		          		      }
+		          		    }
+		          		  }, {
+		          			min:0,
+		          			tickInterval:1,
+		          			allowDecimals:false,
+		          		    title: {
+		          		      text: '票数',
+		          		      style: {
+		          		        color: Highcharts.getOptions().colors[0]
+		          		      }
+		          		    },
+		          		    labels: {
+		          		      format: '{value}',
+		          		      style: {
+		          		        color: Highcharts.getOptions().colors[0]
+		          		      }
+		          		    },
+		          		    opposite: true
+		          		  }],
+		          		  tooltip: {
+		          		    shared: true
+		          		  },
+		          		  legend: {
+		          		    layout: 'vertical',
+		          		    align: 'left',
+		          		    x: 120,
+		          		    verticalAlign: 'top',
+		          		    y: 100,
+		          		    floating: true,
+		          		    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+		          		  },
+		          		  series: [{
+		          		    name: '票数',
+		          		    type: 'column',
+		          		    yAxis: 1,
+		          		    data: data['chart']['num'],
+		          		    tooltip: {
+		          		      valueSuffix: ''
+		          		    }
+		          		  }, {
+		          		    name: '名次',
+		          		    type: 'spline',
+		          		    data: data['chart']['rank'],
+		          		    tooltip: {
+		          		      valueSuffix: ''
+		          		    },
+		          		  }]
+		          		}); 
+                    }, error: function () {
+                        toastr.error('加载出现错误，请稍后重试', 1500);
+                    }
+                });
+            }); 
+        });
+</script>    
+</body>
+</html>

@@ -1,0 +1,19 @@
+index.html    主页 
+
+ranklist.html 排名
+ 
+ranktop.html  top排名
+
+info.html     候选人详细资料
+
+search.html   搜索
+
+
+
+项目标题
+
+候选人数
+
+候选人编号
+
+后台投票规则检测
