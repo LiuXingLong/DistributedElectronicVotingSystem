@@ -32,7 +32,7 @@
  * vim /etc/selinux/config
  * # SELINUX=enforcing     # 注释掉
  * # SELINUXTYPE=targeted  # 注释掉
- * SELINUX=disabled        # 增加
+ * # SELINUX=disabled        # 增加
  * :wq! #保存退出
  * setenforce 0
 
@@ -43,6 +43,7 @@
  * local_enable=YES                   // 本地用户可登录
  * local_root=/usr/local/nginx/html   // 设置本地用户根目录
  * chroot_local_user=YES              // 限定用户在指定目录下
+ * allow_writeable_chroot=YES # 如果启用了限定用户在其主目录下需要添加这个配置，解决报错 500 OOPS: vsftpd: refusing to run with writable root inside chroot()
  * 没办法上传文件夹，但可以创建文件  mkdir 文件夹名     rm 删除文件夹
 
  * systemctl stop firewalld.service  #停止firewall
